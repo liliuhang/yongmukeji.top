@@ -3,32 +3,155 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>永慕科技新网站建设中...</title>  
+    <title>永慕科技官网（自建）</title>  
     <style>  
         body {  
             font-family: Arial, sans-serif;  
-            text-align: center;  
-            padding-top: 50px; /* 调整内边距以适应新内容 */  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f4f4f4;  
         }  
-        .center-content {  
-            margin: 0 auto;  
-            max-width: 600px; /* 限制内容宽度以更好地在屏幕上居中显示 */  
+  
+        .header {  
+            background-color: #000;  
+            color: #fff;  
+            padding: 10px 0;  
+            text-align: center;  
+        }  
+  
+        .header h1 {  
+            margin: 0;  
+            font-size: 24px;  
+        }  
+  
+        .content {  
             padding: 20px;  
-            text-align: center;  
+            max-width: 800px;  
+            margin: 20px auto;  
+            background-color: #fff;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
         }  
-        a {  
-            text-decoration: none; /* 去除链接下划线 */  
-            color: blue; /* 设置链接颜色 */  
+  
+        .section {  
+            margin-bottom: 20px;  
         }  
-        a:hover {  
-            text-decoration: underline; /* 鼠标悬停时添加下划线 */  
+  
+        .section h2 {  
+            font-size: 20px;  
+            margin-top: 0;  
         }  
+  
+        .team-info {  
+            list-style: none;  
+            padding: 0;  
+        }  
+  
+        .team-info li {  
+            margin-bottom: 10px;  
+        }  
+  
+        /* 设置所有链接的默认颜色为黑色 */  
+.footer {  
+    background-color: #cccccc; /* 使用十六进制颜色码设置灰色背景 */  
+    /* 其他样式，如文本颜色、内边距、外边距等 */  
+    color: black; /* 设置文本颜色为黑色色，以便在灰色背景上清晰可见 */  
+    text-align: center; /* 文本居中显示（可选） */  
+    padding: 5px 0; /* 上下内边距为5px，左右内边距为0（可选） */  
+}
+.footer a:visited {  
+    color: blue; /* 已访问链接的颜色 */  
+}  
+  
+.footer a:hover {  
+    color: #f0f0f0; /* 鼠标悬停时的颜色（可选，稍微变亮一点以提供反馈） */  
+    text-decoration: underline; /* 可选，鼠标悬停时添加下划线 */  
+}  
+  
+.footer a:active {  
+    color: white; /* 激活（点击）时的颜色 */  
+}
+    .footer .footer-logo {  
+        /* 为图片设置样式 */  
+        max-width: 20%; /* 限制图片最大宽度为容器宽度的20% */  
+        height: auto; /* 高度自适应 */  
+        margin-right: 10px; /* 右边距，以便与文本保持一定距离 */  
+    }  
+  
+    .footer .footer-text {  
+        /* 文本容器的样式（可选，用于更精细的控制） */  
+        flex: 1; /* 文本占据剩余空间 */  
+        text-align: left; /* 将文本对齐方式改为左对齐，以适应新布局 */  
+    }  
+  
+    /* 响应式设计，可选 */  
+    @media (max-width: 600px) {  
+        .footer .footer-logo {  
+            max-width: 65px; /* 在小屏幕上限制图片最大宽度为65px */  
+            margin-right: 5px; /* 减少右边距 */  
+        }  
+  
+        .footer .footer-text {  
+            text-align: center; /* 在小屏幕上将文本居中显示 */  
+        }  
+  
+        .footer {  
+            flex-direction: column; /* 在小屏幕上将布局改为列布局 */  
+            align-items: flex-start; /* 文本和图片垂直排列，从顶部开始 */  
+        }  
+        .center-image {  
+            display: block;  
+            margin-left: auto;  
+            margin-right: auto;  
+            width: 50%; /* 或具体像素值，根据需要调整 */  
+        }  
+    }  
     </style>  
 </head>  
 <body>  
-    <div class="center-content">  
-        <h1>永慕科技新网站建设中，敬请期待！</h1>  
-        <p>您可以访问永慕科技的现有官网：<a href="https://ymkj.mysxl.cn">https://ymkj.mysxl.cn</a></p>  
+    <div class="header">  
+        <h1>永慕科技 | YongmuTechnology</h1>  
     </div>  
+  
+    <div class="content">  
+        <div class="section">  
+            <h2>永慕科技介绍</h2>  
+            <p>永慕科技成立于2022年10月25日，原独立的wearCAD团队已成为永慕科技核心团队~</p>  
+            <p>wearCAD成立于2022年3月1日，是一个专业的软件开发团队，隶属于永慕科技。</p>  
+            <p>目前拥有成员多名，包括美工人员、技术人员。</p>
+            <p>我们的口号是：不畏艰难，勇于创新！</p>
+        </div>  
+  
+        <div class="section">  
+            <h2>联系我们</h2>  
+            <ul class="team-info">  
+                <li>如您遇到应用问题或有疑问，请点击<a href="https://www.wjx.cn/vm/rMkXPNn.aspx" target="_blank">链接</a>填写问卷，我们将尽快回复您！</li>  
+            </ul>  
+        </div>  
+  
+        <div class="section">  
+            <h2>网站运营调整通知</h2>  
+            <ul class="team-info">  
+            <li>尊敬的用户：您好！</li>
+            <li>因运营策略调整，永慕科技在“上线了”的官网将在2035年12月31日前完全过渡到新域名:https://yongmukeji.top；永慕科技网站群内由“上线了”托管的网站也将逐步脱离“上线了”，实现完全由永慕科技建设、管理。</li>
+            <li>因技术有限、工作量大以及先前已发布账号临时停用的通知，全部完成本迁移任务所需的时间较长，还请您耐心等待！😊</li>
+            <li>迁移工作完成前建议您访问<a href="https://ymkj.mysxl.cn" target="_blank">永慕科技现有官网（由“上线了”托管）</a>享受更全面、便捷的服务~</li>
+            <li>永慕科技</li>
+            <li>2024年8月6日</li>
+        </div>  
+    </div>  
+  
+    <div class="footer">
+    <div class="footer-text">  
+        <div class="section">  
+            <h2>联系我们</h2>  
+            <ul class="team-info">  
+                <li><a href="mailto:YongmuTechnology@outlook.com">YongmuTechnology@outlook.com</a></li>  
+                <li><a href="https://wearcad.mysxl.cn" target="_blank">wearCAD官网</a></li>  
+            </ul>  
+            <p>版权所有 &copy; Copyright © 2022 - 2024 永慕科技</p>  
+            <img src="永慕科技.jpg" alt="永慕科技Logo" class="footer-logo">  
+        </div>  
+    </div>  
+</div>
 </body>  
 </html>
