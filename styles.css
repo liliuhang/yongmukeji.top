@@ -143,3 +143,43 @@ a:hover {
 .footer .copyright span {  
     margin-right: auto;  
 }
+/* 基础样式 */  
+body, html {  
+    margin: 0;  
+    padding: 0;  
+    width: 100%;  
+}  
+  
+.header, .intro, .contact, .footer {  
+    width: 100%;  
+    box-sizing: border-box;  
+}  
+  
+/* 响应式样式 */  
+@media (max-width: 768px) {  
+    .logo-container h1 {  
+        font-size: 1.5em; /* 更小的标题字体 */  
+    }  
+  
+    .intro {  
+        background-size: cover; /* 确保背景图片覆盖整个区域但不失真 */  
+        background-position: center;  
+    }  
+  
+    .intro-content h2 {  
+        font-size: 1.2em; /* 更小的副标题字体 */  
+    }  
+    
+    .text-area p {  
+        font-size: 0.9em; /* 更小的文本字体 */  
+    }  
+  
+    .button {  
+        font-size: 0.9em; /* 按钮上的字体也相应减小 */  
+        width: 100%; /* 使按钮宽度占满整行 */  
+    }  
+  
+    .footer .links p a {  
+        font-size: 0.8em; /* 链接字体也相应减小 */  
+    }  
+}
