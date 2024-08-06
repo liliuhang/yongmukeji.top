@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html lang="zh">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>404 页面不存在！</title>  
+    <style>  
+        body {  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            justify-content: center;  
+            height: 80vh;  
+            margin: 0;  
+            font-family: Arial, sans-serif;  
+        }  
+        .error-image {  
+            max-width: 40%;  
+            height: auto;  
+            margin-bottom: 40px;  
+        }  
+        .error-message {  
+            text-align: center;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <img src="404.jpg" alt="404 Not Found" class="error-image">  
+    <div class="error-message">  
+        您访问的页面不存在/已删除/已更改，我们将在【5秒】后帮您重定向到永慕科技官网（自建）！  
+    </div>  
+  
+    <script>  
+        setTimeout(function() {  
+            window.location.href = 'https://www.yongmukeji.top'; // 请替换为您的永慕科技官网地址  
+        }, 5000); // 5000毫秒后重定向  
+    </script>  
+</body>  
+</html>
