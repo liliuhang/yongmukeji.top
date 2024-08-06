@@ -3,155 +3,96 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>永慕科技官网（自建）</title>  
-    <style>  
-        body {  
-            font-family: Arial, sans-serif;  
-            margin: 0;  
-            padding: 0;  
-            background-color: #f4f4f4;  
-        }  
-  
-        .header {  
-            background-color: #000;  
-            color: #fff;  
-            padding: 10px 0;  
-            text-align: center;  
-        }  
-  
-        .header h1 {  
-            margin: 0;  
-            font-size: 24px;  
-        }  
-  
-        .content {  
-            padding: 20px;  
-            max-width: 800px;  
-            margin: 20px auto;  
-            background-color: #fff;  
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
-        }  
-  
-        .section {  
-            margin-bottom: 20px;  
-        }  
-  
-        .section h2 {  
-            font-size: 20px;  
-            margin-top: 0;  
-        }  
-  
-        .team-info {  
-            list-style: none;  
-            padding: 0;  
-        }  
-  
-        .team-info li {  
-            margin-bottom: 10px;  
-        }  
-  
-        /* 设置所有链接的默认颜色为黑色 */  
-.footer {  
-    background-color: #cccccc; /* 使用十六进制颜色码设置灰色背景 */  
-    /* 其他样式，如文本颜色、内边距、外边距等 */  
-    color: black; /* 设置文本颜色为黑色色，以便在灰色背景上清晰可见 */  
-    text-align: center; /* 文本居中显示（可选） */  
-    padding: 5px 0; /* 上下内边距为5px，左右内边距为0（可选） */  
-}
-.footer a:visited {  
-    color: blue; /* 已访问链接的颜色 */  
-}  
-  
-.footer a:hover {  
-    color: #f0f0f0; /* 鼠标悬停时的颜色（可选，稍微变亮一点以提供反馈） */  
-    text-decoration: underline; /* 可选，鼠标悬停时添加下划线 */  
-}  
-  
-.footer a:active {  
-    color: white; /* 激活（点击）时的颜色 */  
-}
-    .footer .footer-logo {  
-        /* 为图片设置样式 */  
-        max-width: 20%; /* 限制图片最大宽度为容器宽度的20% */  
-        height: auto; /* 高度自适应 */  
-        margin-right: 10px; /* 右边距，以便与文本保持一定距离 */  
-    }  
-  
-    .footer .footer-text {  
-        /* 文本容器的样式（可选，用于更精细的控制） */  
-        flex: 1; /* 文本占据剩余空间 */  
-        text-align: left; /* 将文本对齐方式改为左对齐，以适应新布局 */  
-    }  
-  
-    /* 响应式设计，可选 */  
-    @media (max-width: 600px) {  
-        .footer .footer-logo {  
-            max-width: 65px; /* 在小屏幕上限制图片最大宽度为65px */  
-            margin-right: 5px; /* 减少右边距 */  
-        }  
-  
-        .footer .footer-text {  
-            text-align: center; /* 在小屏幕上将文本居中显示 */  
-        }  
-  
-        .footer {  
-            flex-direction: column; /* 在小屏幕上将布局改为列布局 */  
-            align-items: flex-start; /* 文本和图片垂直排列，从顶部开始 */  
-        }  
-        .center-image {  
-            display: block;  
-            margin-left: auto;  
-            margin-right: auto;  
-            width: 50%; /* 或具体像素值，根据需要调整 */  
-        }  
-    }  
-    </style>  
+    <title>永慕科技官网</title>  
+    <link rel="stylesheet" href="styles.css">  
 </head>  
 <body>  
-    <div class="header">  
-        <h1>永慕科技 | YongmuTechnology</h1>  
-    </div>  
+    <header class="header">  
+        <div class="logo-container">  
+            <img src="永慕科技.jpg" alt="永慕科技" class="logo">  
+            <h1>永慕科技 | YongmuTechnology</h1>  
+        </div>  
+    </header>  
   
-    <div class="content">  
-        <div class="section">  
-            <h2>永慕科技介绍</h2>  
-            <p>永慕科技成立于2022年10月25日，原独立的wearCAD团队已成为永慕科技核心团队~</p>  
-            <p>wearCAD成立于2022年3月1日，是一个专业的软件开发团队，隶属于永慕科技。</p>  
+    <section class="intro" style="background-image: url('永慕科技-modified.jpg');">  
+        <div class="intro-content">  
+            <h2>永慕科技|wearCAD</h2>  
+            <p>永慕科技成立于2022年10月25日，原独立的wearCAD团队已成为永慕科技核心团队~</p>
+            <p>wearCAD成立于2022年3月1日，是一个专业的软件开发团队，隶属于永慕科技。</p>
             <p>目前拥有成员多名，包括美工人员、技术人员。</p>
             <p>我们的口号是：不畏艰难，勇于创新！</p>
+            <a href="https://wearcad.mysxl.cn" class="button">访问 wearCAD官网</a>   
         </div>  
+    </section>  
   
-        <div class="section">  
+    <section class="contact">  
+        <div class="contact-content">  
+            <img src="客服背景.jpg" alt="背景图" class="background-image">  
+            <div class="text-area"> 
+                <p>联系我们</p>
+                <p>如您遇到应用问题或有疑问，请点击<a href="https://www.wjx.cn/vm/rMkXPNn.aspx" target="_blank">【此处】</a>填写问卷，我们将尽快回复您！</p>  
+                <a href="https://chatbot.weixin.qq.com/webapp/xa8pVadXexnpYypLGlFKv3RQONcsq5?robotName=%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D" class="button">访问 智能客服</a>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <footer class="footer">  
+        <div class="logo-container">  
+            <img src="永慕科技.jpg" alt="永慕科技" class="logo">  
+        </div>  
+        <div class="links">  
+            <h2>永慕科技网站群（带“*”为暂未完成迁移，仍由“上线了“托管的网站）</h2>  
+            <p><a href="https://wearcad1.mysxl.cn" target="_blank">永慕科技开放平台*</a></p>
+            <p><a href="https://wearcadpolice.mysxl.cn" target="_blank">永慕科技安全中心*</a></p>
+            <p><a href="https://forms.office.com/r/kHk9vbYcE6" target="_blank">永慕科技所得版权公示平台</a></p>
+            <p><a href="https://txc.qq.com/products/544423" target="_blank">永慕科技交流社区（腾讯兔小巢）</a></p>
+            <p><a href="https://teams.live.com/l/community/FEAs8QxBwrI5JDTWgM" target="_blank">永慕科技交流社区（Microsoft Teams）</a></p>
+            <p><a href="https://pd.qq.com/s/h0xhtekj9" target="_blank">永慕科技QQ频道</a></p>
+            <p><a href=https://mp.weixin.qq.com/mp/homepage?__biz=MzkxNjMzNTI2MQ==&hid=1&sn=4985d9c49ef4bed90ccec9ad86019c27" target="_blank">永慕科技新闻中心</a></p>
+            <p><a href="https://forms.office.com/r/kHk9vbYcE6" target="_blank">永慕科技所得版权公示平台</a></p>
+            <p><a href="https://forms.office.com/r/hdWgx0XUcn" target="_blank">永慕科技账号公示平台</a></p>
+            <p><a href="https://wearcad.mysxl.cn" target="_blank">wearCAD官网*</a></p>
+            <p><a href="https://liliuhang.mysxl.cn" target="_blank">李柳航个人网站*</a></p>
+            <p><a href="https://wj.qq.com/s2/12755822/670f" target="_blank">永慕科技网站群找错</a></p>
+            <div class="divider"></div>  
+            <h2>永慕科技对外群</h2>  
+            <p><a href="https://forms.office.com/r/5GAngazKCT" target="_blank">微信对外群</a></p>  
+            <p><a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=dvAGDuFbemWdSqCQYtUxV7AWe9HePzHi&authKey=LyuBhIQMdVDd%2BXkmGKWm07vlAqqlnUwh95rTZEZ%2FyLdjT6e0fk3eI%2B0j31RspU2d&noverify=0&group_code=686760209" target="_blank">QQ对外群（群号：86760209）</a></p>
+            <p><a href="https://www.xiaohongshu.com/user/profile/5fa958dd000000000100317a?xhsshare=CopyLink&appuid=5fa958dd000000000100317a&apptime=1719839057&share_id=39aa9f4bb8834818a93488a8d320be1d" target="_blank">小红书对外群</a></p>
+            <div class="divider"></div>  
             <h2>联系我们</h2>  
-            <ul class="team-info">  
-                <li>如您遇到应用问题或有疑问，请点击<a href="https://www.wjx.cn/vm/rMkXPNn.aspx" target="_blank">链接</a>填写问卷，我们将尽快回复您！</li>  
-            </ul>  
-        </div>  
+            <p><a href="mailto:YongmuTechnology@outlook.com" target="_blank">YongmuTechnology@outlook.com</a></p> 
+            <p><a href="https://chatbot.weixin.qq.com/webapp/xa8pVadXexnpYypLGlFKv3RQONcsq5?robotName=%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D" target="_blank">智能客服</a></p> 
+            <div class="divider"></div>
+        </div> 
+        <div class="copyright"> 
+                <p>版权所有 Copyright ©2022 - 2024 永慕科技</p>  
+        <footer class="footer">  
+        <a href="#" id="termsLink">服务条款</a>  
+        <a href="#" id="privacyLink">隐私政策</a>
+    </footer>  
+
+    <script>  
+// 确保在文档加载完成后执行以下JavaScript代码  
+document.addEventListener('DOMContentLoaded', function() {  
+    // 获取服务条款链接  
+    var termsLink = document.getElementById('termsLink');  
+    // 给服务条款链接添加点击事件监听器  
+    termsLink.addEventListener('click', function(event) {  
+        // 阻止链接的默认行为（即不跳转到其他页面）  
+        event.preventDefault();  
+        // 显示弹窗  
+        alert('您好，相关数据迁移中，暂无内容，敬请期待！');  
+    });  
   
-        <div class="section">  
-            <h2>网站运营调整通知</h2>  
-            <ul class="team-info">  
-            <li>尊敬的用户：您好！</li>
-            <li>因运营策略调整，永慕科技在“上线了”的官网将在2035年12月31日前完全过渡到新域名:https://yongmukeji.top；永慕科技网站群内由“上线了”托管的网站也将逐步脱离“上线了”，实现完全由永慕科技建设、管理。</li>
-            <li>因技术有限、工作量大以及先前已发布账号临时停用的通知，全部完成本迁移任务所需的时间较长，还请您耐心等待！😊</li>
-            <li>迁移工作完成前建议您访问<a href="https://ymkj.mysxl.cn" target="_blank">永慕科技现有官网（由“上线了”托管）</a>享受更全面、便捷的服务~</li>
-            <li>永慕科技</li>
-            <li>2024年8月6日</li>
-        </div>  
-    </div>  
-  
-    <div class="footer">
-    <div class="footer-text">  
-        <div class="section">  
-            <h2>联系我们</h2>  
-            <ul class="team-info">  
-                <li><a href="mailto:YongmuTechnology@outlook.com">YongmuTechnology@outlook.com</a></li>  
-                <li><a href="https://wearcad.mysxl.cn" target="_blank">wearCAD官网</a></li>  
-            </ul>  
-            <p>版权所有 &copy; Copyright © 2022 - 2024 永慕科技</p>  
-            <img src="永慕科技.jpg" alt="永慕科技Logo" class="footer-logo">  
-        </div>  
-    </div>  
-</div>
+    // 同样的，获取隐私政策链接并添加事件监听器  
+    var privacyLink = document.getElementById('privacyLink');  
+    privacyLink.addEventListener('click', function(event) {  
+        event.preventDefault();  
+        alert('您好，相关数据迁移中，暂无内容，敬请期待！');  
+    });  
+});  
+
+    </script>
 </body>  
 </html>
