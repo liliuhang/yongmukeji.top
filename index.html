@@ -3,15 +3,15 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>永慕科技官网（自建）</title>  
-    <link rel="stylesheet" href="styles.css">  
-    <script>  
+    <title>永慕科技官网（自建）</title>   
+<link rel="stylesheet" href="styles.css"> 
+<script>  
         // 当文档加载完成后执行  
         window.onload = function() {  
             // 显示弹窗  
-            alert("因网页内容托管在国外服务器，受中国相关规定、地域限制且未设置自动缓存网页内容，故访问网站时部分内容加载较慢，敬请谅解。后期条件成熟时会将网页迁移至国内服务器。");  
+            alert("因网页内容托管在国外服务器，受中国相关规定、地域限制且未设置自动缓存网页内容，故访问网站时部分内容加载较慢，敬请谅解！后期条件成熟时会将网页迁移至国内服务器。");  
         };  
-    </script>
+    </script> 
 </head>  
 <body>  
     <header class="header">  
@@ -19,8 +19,106 @@
             <img src="永慕科技.jpg" alt="永慕科技" class="logo">  
             <h1>永慕科技 | YongmuTechnology</h1>  
         </div>  
-    </header>  
+    </header>
+<style>  
+        /* 在这里添加你的CSS样式 */  
+        .notification-bar {  
+    position: fixed;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    z-index: 1000; /* 确保在其他内容之上 */
+    height: 30px; /* 假设通知栏高度为30px */  
+    background-color: #f00; /* 红色背景 */  
+    color: #fff; /* 白色文字 */  
+    padding: 0 10px;  
+    display: flex;  
+    align-items: center;  
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
+}  
   
+.icon-container {  
+    margin-right: 3px;  
+    font-size: 24px; /* 喇叭图标大小 */  
+}  
+  
+.scrolling-text {  
+    flex-grow: 1;  
+    overflow: hidden;  
+    white-space: nowrap;  
+    box-sizing: border-box;  
+    animation: scrollText 15s linear infinite; /* 滚动动画 */  
+   }  
+  
+@keyframes scrollText {  
+    from {  
+        transform: translateX(100%);  
+    }  
+    to {  
+        transform: translateX(-100%);  
+    }  
+}  
+  
+/* 可选：设置自动隐藏的通知文本 */  
+.hidden {  
+    display: none;  
+}
+    </style>  
+</head>  
+<body>
+<div class="notification-bar">  
+    <div class="icon-container">  
+        <span class="icon">🔈</span> <!-- 使用HTML实体编号表示喇叭图标 -->  
+    </div>  
+<div class="scrolling-text" id="message-container">  
+        <!-- 这里可以通过JavaScript动态添加文本 -->  
+    </div>  
+<script>  
+document.addEventListener('DOMContentLoaded', function() {  
+    let messages = [  
+        { text: "您好，欢迎访问永慕科技官网（自建）~您如有任何意见建议或疑问都可通过相关板块向我们反馈，我们收到后将认真对待、处理！", endTime: new Date('9999-12-31T23:59:59').getTime() },  
+        { text: "不畏艰难，勇于创新！【🎉在第40个教师节来临之际，祝辛勤耕耘的园丁们节日快乐，桃李满天下，春晖遍四方！】", endTime: new Date('9999-12-31T23:59:59').getTime() },  
+        { text: "因运营策略调整，永慕科技网站群内由“上线了”托管的网站将逐步脱离“上线了”，实现完全由永慕科技建设、管理。因技术有限、工作量大等，完成本迁移任务所需的时间较长，预计在2035年12月31日前完成，还请您耐心等待！", endTime: new Date('2035-12-31T23:59:59').getTime() },  
+         ];
+    let currentIndex = 0; // 跟踪当前消息索引  
+  
+function updateMessage() {  
+    let foundActive = false; // 标记是否找到并显示了一个未过期的消息  
+  
+    // 不断尝试找到未过期的消息  
+    while (!foundActive && currentIndex < messages.length) {  
+        let activeMessage = messages[currentIndex];  
+        let now = new Date().getTime(); // 当前时间  
+  
+        // 检查消息是否未过期  
+        if (activeMessage.endTime > now) {  
+            document.getElementById('message-container').textContent = activeMessage.text;  
+            foundActive = true; // 找到并显示了一个未过期的消息  
+        }  
+  
+        // 如果没有找到未过期的消息，尝试下一个消息  
+        currentIndex = (currentIndex + 1) % messages.length;  
+  
+        // 如果已经回到第一个消息但还没有找到未过期的，重置currentIndex以避免无限循环  
+        if (currentIndex === 0 && !foundActive) {  
+            currentIndex = 0; // 实际上这里不需要再次设置0，因为循环会从头开始
+                       // 你可能想在这里添加一个额外的逻辑来处理没有未过期消息的情况，比如显示一个默认的占位符消息  
+            document.getElementById('message-container').textContent = "您好，永慕科技微信公众号已于2024年7月31日起正式暂停使用，预计恢复时间为2027年6月9日，在此期间可通过微信公众号的智能客服功能自助解决问题或提交反馈！再见是为了更好的再见，感谢您一直以来的支持与陪伴~";  
+            break; // 跳出循环  
+        }  
+    }  
+  
+    // 注意：这里没有再次增加currentIndex，因为它已经在循环内部处理  
+} 
+  
+    // 每15秒更新一次消息  
+    setInterval(updateMessage, 15000);  
+  
+    // 初始化时立即显示第一个有效消息  
+    updateMessage();  
+});  
+</script>  
+</div>
     <section class="intro" style="background-image: url('永慕科技-modified.jpg');">  
         <div class="intro-content">  
             <h2>永慕科技|wearCAD</h2>  
@@ -48,7 +146,7 @@
             <img src="永慕科技.jpg" alt="永慕科技" class="logo">  
         </div>  
         <div class="links">  
-            <h2>永慕科技网站群（带“*”为暂未完成迁移，仍由“上线了”托管的网站）</h2> 
+            <h2>永慕科技网站群（带“*”为暂未完成迁移，仍由“上线了”托管的网站）</h2>  
             <h2><a href="https://yongmukeji.top/%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E9%80%9A%E7%9F%A5.html" target="_blank">【查看迁移通知详情】</h2>
             <p><a href="https://wearcad1.mysxl.cn" target="_blank">永慕科技开放平台*</a></p>
             <p><a href="https://wearcadpolice.mysxl.cn" target="_blank">永慕科技安全中心*</a></p>
