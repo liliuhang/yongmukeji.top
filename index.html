@@ -76,9 +76,10 @@
 <script>  
 document.addEventListener('DOMContentLoaded', function() {  
     let messages = [  
-        { text: "您好，欢迎访问永慕科技官网（自建）~您如有任何意见建议或疑问都可通过相关板块向我们反馈，我们收到后将认真对待、处理！", endTime: new Date('9999-12-31T23:59:59').getTime() },  
-        { text: "不畏艰难，勇于创新！【🎉在第40个教师节来临之际，祝辛勤耕耘的园丁们节日快乐，桃李满天下，春晖遍四方！】", endTime: new Date('9999-12-31T23:59:59').getTime() },  
-        { text: "因运营策略调整，永慕科技网站群内由“上线了”托管的网站将逐步脱离“上线了”，实现完全由永慕科技建设、管理。因技术有限、工作量大等，完成本迁移任务所需的时间较长，预计在2035年12月31日前完成，还请您耐心等待！", endTime: new Date('2035-12-31T23:59:59').getTime() },  
+        { text: "您好，欢迎访问永慕科技官网（自建）~", endTime: new Date('9999-12-31T23:59:59').getTime() },  
+        { text: "不畏艰难，勇于创新！", endTime: new Date('9999-12-31T23:59:59').getTime() },  
+        { text: "因运营策略调整，永慕科技网站群内由“上线了”托管的网站将逐步脱离“上线了”，实现完全由永慕科技建设、管理。因技术有限、工作量大等，完成本迁移任务所需的时间较长，预计在2035年12月31日前完成，还请您耐心等待！", endTime: new Date('2035-12-31T23:59:59').getTime() }, 
+        { text: "网站通知栏调试中，如给您带来不好的体验，敬请谅解！", endTime: new Date('9999-12-31T23:59:59').getTime() }, 
          ];
     let currentIndex = 0; // 跟踪当前消息索引  
   
@@ -103,7 +104,7 @@ function updateMessage() {
         if (currentIndex === 0 && !foundActive) {  
             currentIndex = 0; // 实际上这里不需要再次设置0，因为循环会从头开始
                        // 你可能想在这里添加一个额外的逻辑来处理没有未过期消息的情况，比如显示一个默认的占位符消息  
-            document.getElementById('message-container').textContent = "您好，永慕科技微信公众号已于2024年7月31日起正式暂停使用，预计恢复时间为2027年6月9日，在此期间可通过微信公众号的智能客服功能自助解决问题或提交反馈！再见是为了更好的再见，感谢您一直以来的支持与陪伴~";  
+            document.getElementById('message-container').textContent = "【目前无消息可通知，请添加新内容！】";  
             break; // 跳出循环  
         }  
     }  
