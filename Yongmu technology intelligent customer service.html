@@ -41,15 +41,16 @@
         }
         .maintenance-message {
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: calc(16px + 0.8vw); /* 根据屏幕尺寸调整字体大小 */
         }
         .maintenance-link {
             color: #fff;
             text-decoration: underline;
             cursor: pointer;
+            font-size: calc(14px + 0.6vw); /* 根据屏幕尺寸调整字体大小 */
         }
         .container {
-            width: 80%;
+            width: 90%; /* 使用百分比宽度 */
             max-width: 600px;
             background-color: #fff;
             padding: 20px;
@@ -61,8 +62,19 @@
         }
         iframe {
             width: 100%;
-            height: 690px;
+            height: calc(100vh - 200px); /* 根据视口高度调整iframe高度，留出一些空间给标题和描述 */
             border: none;
+        }
+        @media (max-width: 600px) {
+            .maintenance-message {
+                font-size: 18px; /* 在小屏幕上使用固定字体大小 */
+            }
+            .maintenance-link {
+                font-size: 16px; /* 在小屏幕上使用固定字体大小 */
+            }
+            iframe {
+                height: calc(100vh - 150px); /* 在小屏幕上调整iframe高度 */
+            }
         }
     </style>
 </head>
