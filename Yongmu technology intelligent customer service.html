@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永慕科技智能客服</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            transition: opacity 1s ease;
+        }
+        .maintenance-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        .maintenance-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .maintenance-message {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .maintenance-link {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            position: relative; /* Ensure container is above overlay when overlay is hidden */
+            z-index: 1; /* Ensure container is above overlay when overlay is hidden */
+        }
+        iframe {
+            width: 100%;
+            height: 690px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="maintenanceOverlay" class="maintenance-overlay">
+        <div class="maintenance-message">系统维护中，暂停服务！</div>
+        <div class="maintenance-message">维护时间：2024年12月31日00：00—2025年1月1日23：59：59</div>
+        <div class="maintenance-link" onclick="goToWebsite()">【点击此处返回官网】</div>
+    </div>
+    <div class="container" id="mainContainer">
+        <h1>欢迎访问永慕科技智能客服！</h1>
+        <p>如有任何疑问，您可通过下面的智能客服窗口咨询/联系我们。</p>
+        <iframe src="https://chatbot.weixin.qq.com/webapp/xa8pVadXexnpYypLGlFKv3RQONcsq5?robotName=%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D" title="智能客服" id="smartAgentIframe"></iframe>
+    </div>
+
+    <script>
+        // 设置维护结束的时间戳（毫秒）
+        var maintenanceEndTime = new Date('2025-01-01T23:59:59').getTime();
+
+        // 获取当前时间戳（毫秒）
+        var now = new Date().getTime();
+
+        // 计算剩余时间（毫秒）
+        var timeRemaining = maintenanceEndTime - now;
+
+        // 如果当前时间已经过了维护结束时间，则隐藏维护层
+        if (timeRemaining <= 0) {
+            document.getElementById('maintenanceOverlay').classList.add('hidden');
+        } else {
+            // 否则，设置一个定时器在维护结束时隐藏维护层
+            setTimeout(function() {
+                document.getElementById('maintenanceOverlay').classList.add('hidden');
+            }, timeRemaining);
+        }
+
+        // 函数：点击链接后跳转到官网
+        function goToWebsite() {
+            window.location.href = 'https://yongmukeji.top'; // 替换为你的官网URL
+        }
+    </script>
+</body>
+</html>
