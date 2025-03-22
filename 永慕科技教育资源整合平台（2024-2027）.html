@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>永慕科技教育资源整合平台</title>
+    <title>永慕科技教育资源整合平台（2024-2027）</title>
     <style>
         * {
             margin: 0;
@@ -11,186 +11,205 @@
             box-sizing: border-box;
         }
 
-        body, html {
-            height: 100%;
+        body {
             font-family: Arial, sans-serif;
-            min-height: 50vh
-        }
-
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('jfm.jpg'); /* 背景图路径 */
-            background-size: cover;
-            background-position: center;
-            z-index: -1; /* 确保内容层叠在背景图上 */
-        }
-
-        .main-content {
-            position: top;
+            background: url('jfm.jpg') no-repeat center center/cover;
+            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 300px;
-            color: white; /* 根据背景图调整文字颜色 */
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .welcome-box {
-            background-color: rgba(0, 0, 0, 0.6); /* 深色半透明背景 */
-            padding: 25px;
-            border-radius: 50px;
-            text-align: center;
-            margin-bottom: 50px;
+        .overlay {
             width: 100%;
-            max-width: 600px;
-        }
-
-        .countdown {
-            font-size: 1.2em;
-            color: red; /* 醒目的倒计时颜色 */
-            margin-top: 10px;
-        }
-
-        .nav-section {
-            width: 80%;
-            max-width: 900px;
-        }
-
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 100fr));
-            gap: 25px;
-        }
-
-        .nav-item {
-            background-color: rgba(255, 255, 255, 0.8); /* 浅色半透明背景 */
-            padding: 15px;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .overlay h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .overlay .countdown {
+            font-size: 20px;
+            color: red;
+        }
+
+        .platform-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .platform-box {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             cursor: pointer;
             transition: transform 0.3s;
         }
 
-        .nav-item:hover {
+        .platform-box:hover {
             transform: scale(1.05);
         }
 
-        .nav-icon {
-            width: 40px;
-            height: 40px;
+        .platform-box img {
+            width: 80px;
+            height: 80px;
             margin-bottom: 10px;
         }
 
-        .nav-text {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            color:black
+        .platform-box span {
+            font-size: 16px;
+            color: black;
         }
 
         footer {
-            background-color: rgba(0, 0, 0, 0.8); /* 深色半透明背景 */
+            margin-top: auto;
+            width: 100%;
+            background: black;
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative; /* 确保在内容流中 */
         }
 
-        @media (max-width: 650px) {
-            .welcome-box {
-                width: 50%;
-                padding: 15px;
-            }
-
-            .countdown {
-                font-size: 1em;
-            }
-
-            .nav-item {
-                padding: 10px;
-            }
+        footer p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <div class="background-image"></div>
-    
-    <div class="main-content">
-        <div class="welcome-box">
-            <h1>欢迎访问【永慕科技教育资源整合平台（2024-2027）】</h1>
-            <div class="countdown" id="countdown">
-                永慕科技提示您：距离2027年高考还有：<span id="time">加载中...</span>
-            </div>
-        </div>
-
-        <div class="nav-section">
-            <div class="nav-grid">
-                <div class="nav-item" onclick="window.open('https://www.zhixue.com', '_blank')">
-                    <img src="zhixue.png" alt="智学网" class="nav-icon">
-                    <div class="nav-text">智学网</div>
-                </div>
-                <div class="nav-item" onclick="window.open('https://www.smartedu.cn', '_blank')">
-                    <img src="gjzhjypt.jpg" alt="国家智慧教育公共平台" class="nav-icon">
-                    <div class="nav-text">智慧教育公共平台</div>
-                </div>
-                <div class="nav-item" onclick="window.open('https://www.zxxk.com', '_blank')">
-                    <img src="xkw.jpg" alt="学科网" class="nav-icon">
-                    <div class="nav-text">学科网</div>
-                </div>
-                <div class="nav-item" onclick="window.open('https://m.tesoon.com', '_blank')">
-                    <img src="txjy.png" alt="天星教育" class="nav-icon">
-                    <div class="nav-text">天星教育</div>
-                </div>
-                <div class="nav-item" onclick="window.open('https://www.lxzwedu.com/home', '_blank')">
-                    <img src="lxs.jpg" alt="理想树" class="nav-icon">
-                    <div class="nav-text">理想树</div>
-                </div>
-                </p>
-                <div class="nav-item" onclick="window.open('https://jyt.yn.gov.cn', '_blank')">
-                    <img src="ynsjyt.png" alt="云南省教育厅" class="nav-icon">
-                    <div class="nav-text">云南省教育厅</div>
-                </div>
-                <div class="nav-item" onclick="window.open('https://gaokao.chsi.com.cn', '_blank')">
-                    <img src="yggk.jpg" alt="阳光高考" class="nav-icon">
-                    <div class="nav-text">阳光高考</div>
-                </div>
-                <div class="nav-item" onclick="window.open('https://yongmukeji.top', '_blank')">
-                    <img src="ymkj-square.png" alt="永慕科技官网" class="nav-icon">
-                    <div class="nav-text">永慕科技官网</div>
-                </div>
-            </div>
-        </div>
+    <div class="overlay">
+        <h1>欢迎访问【永慕科技教育资源整合平台（2024-2027）】</h1>
+        <p>永慕科技提示您：距离2027年高考还有：<span class="countdown" id="countdown"></span></p>
     </div>
-     <footer>
-        主办单位：永慕科技 <span style="margin: 0 20px;"></span> 版权归各平台所有
+
+    <div class="platform-container">
+        <div class="platform-box" onclick="window.location.href='https://www.zhixue.com'">
+            <img src="zhixue.png" alt="智学网">
+            <span>智学网</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.smartedu.cn'">
+            <img src="gjzhjypt.jpg" alt="智慧教育平台">
+            <span>智慧教育平台</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.zxxk.com'">
+            <img src="xkw.jpg" alt="学科网">
+            <span>学科网</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.jyeoo.com'">
+            <img src="jyw.png" alt="菁优网">
+            <span>菁优网</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://m.tesoon.com'">
+            <img src="txjy.png" alt="天星教育">
+            <span>天星教育</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.lxzwedu.com'">
+            <img src="lxs.jpg" alt="理想树">
+            <span>理想树</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://student.up366.cn'">
+            <img src="txwxs.png" alt="天学网（学生端）-网页版">
+            <span>天学网（学生端）-网页版</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://jyt.yn.gov.cn'">
+            <img src="ynsjyt.png" alt="云南省教育厅">
+            <span>云南省教育厅</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://gaokao.chsi.com.cn'">
+            <img src="yggk.jpg" alt="阳光高考">
+            <span>阳光高考</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.gaokao.cn'">
+            <img src="zsgk.jpg" alt="掌上高考">
+            <span>掌上高考</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.ynzs.cn'">
+            <img src="ynszsksy.png" alt="云南省招生考试院">
+            <span>云南省招生考试院</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://www.ynxueye.com'">
+            <img src="ynszsksy.png" alt="云南学业网">
+            <span>云南学业网</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://gk.ynzs.cn'">
+            <img src="ynszsksy.png" alt="云南省普通高等学校招生考生服务平台">
+            <span>云南省普通高等学校招生考生服务平台</span>
+        </div>
+        <div class="platform-box" onclick="window.location.href='https://yongmukeji.top'">
+            <img src="ymkj-square.png" alt=永慕科技官网（自建）">
+            <span>永慕科技官网（自建）</span>
+        </div>
+        </div>
+        <div class="platform-box" onclick="window.location.href='#'">
+            <img src="Yongmu Technology Education Resource Integration Platform (2024-2027).png" alt="更多平台收集中...">
+            <span>更多平台收集中...</span>
+        </div>
+        <!-- 可以添加更多平台 -->
+    </div>
+
+    <footer>
+        主办单位：永慕科技 <span style="margin: 0 10px;"></span> 技术支持：永慕科技电化教育中心
+        <p>网站内容仅面向【云南省】地区，排名不分先后，版权归各平台所有</p>
+        <p id="runtime">网页已运行时间：计算中...</p>
     </footer>
 
     <script>
-        // 倒计时功能
         function updateCountdown() {
-            const targetDate = new Date('2027-06-07T00:00:00');
-            const now = new Date();
-            const diff = targetDate - now;
+            const countdownDate = new Date('2027-06-07T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
 
-            if (diff <= 0) {
-                document.getElementById('time').textContent = '高考已结束！';
-                return;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const countdownElement = document.getElementById('countdown');
+            if (distance > 0) {
+                countdownElement.textContent = `${days}天${hours}时${minutes}分${seconds}秒`;
+            } else {
+                countdownElement.textContent = '2027年高考已结束！';
             }
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('time').textContent = 
-                `${days}天${hours}时${minutes}分${seconds}秒`;
         }
 
-        setInterval(updateCountdown, 1000);
+        function updateRuntime() {
+            const startTime = new Date('2025-03-24T00:00:00').getTime();
+            const now = new Date().getTime();
+            const elapsed = now - startTime;
+
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+            document.getElementById('runtime').textContent = `网页已运行时间（2025年3月24日00：00起）：${days}天${hours}时${minutes}分${seconds}秒`;
+        }
+
+        setInterval(() => {
+            updateCountdown();
+            updateRuntime();
+        }, 1000);
+
+        // 初始化
         updateCountdown();
+        updateRuntime();
     </script>
 </body>
 </html>
