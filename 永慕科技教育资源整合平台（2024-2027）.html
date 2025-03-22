@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永慕科技教育资源整合平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            min-height: 50vh
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('jfm.jpg'); /* 背景图路径 */
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* 确保内容层叠在背景图上 */
+        }
+
+        .main-content {
+            position: top;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 300px;
+            color: white; /* 根据背景图调整文字颜色 */
+        }
+
+        .welcome-box {
+            background-color: rgba(0, 0, 0, 0.6); /* 深色半透明背景 */
+            padding: 25px;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .countdown {
+            font-size: 1.2em;
+            color: red; /* 醒目的倒计时颜色 */
+            margin-top: 10px;
+        }
+
+        .nav-section {
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 100fr));
+            gap: 25px;
+        }
+
+        .nav-item {
+            background-color: rgba(255, 255, 255, 0.8); /* 浅色半透明背景 */
+            padding: 15px;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .nav-item:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .nav-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color:black
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8); /* 深色半透明背景 */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* 确保在内容流中 */
+        }
+
+        @media (max-width: 650px) {
+            .welcome-box {
+                width: 50%;
+                padding: 15px;
+            }
+
+            .countdown {
+                font-size: 1em;
+            }
+
+            .nav-item {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    
+    <div class="main-content">
+        <div class="welcome-box">
+            <h1>欢迎访问【永慕科技教育资源整合平台（2024-2027）】</h1>
+            <div class="countdown" id="countdown">
+                永慕科技提示您：距离2027年高考还有：<span id="time">加载中...</span>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-grid">
+                <div class="nav-item" onclick="window.open('https://www.zhixue.com', '_blank')">
+                    <img src="zhixue.png" alt="智学网" class="nav-icon">
+                    <div class="nav-text">智学网</div>
+                </div>
+                <div class="nav-item" onclick="window.open('https://www.smartedu.cn', '_blank')">
+                    <img src="gjzhjypt.jpg" alt="国家智慧教育公共平台" class="nav-icon">
+                    <div class="nav-text">智慧教育公共平台</div>
+                </div>
+                <div class="nav-item" onclick="window.open('https://www.zxxk.com', '_blank')">
+                    <img src="xkw.jpg" alt="学科网" class="nav-icon">
+                    <div class="nav-text">学科网</div>
+                </div>
+                <div class="nav-item" onclick="window.open('https://m.tesoon.com', '_blank')">
+                    <img src="txjy.png" alt="天星教育" class="nav-icon">
+                    <div class="nav-text">天星教育</div>
+                </div>
+                <div class="nav-item" onclick="window.open('https://www.lxzwedu.com/home', '_blank')">
+                    <img src="lxs.jpg" alt="理想树" class="nav-icon">
+                    <div class="nav-text">理想树</div>
+                </div>
+                </p>
+                <div class="nav-item" onclick="window.open('https://jyt.yn.gov.cn', '_blank')">
+                    <img src="ynsjyt.png" alt="云南省教育厅" class="nav-icon">
+                    <div class="nav-text">云南省教育厅</div>
+                </div>
+                <div class="nav-item" onclick="window.open('https://gaokao.chsi.com.cn', '_blank')">
+                    <img src="yggk.jpg" alt="阳光高考" class="nav-icon">
+                    <div class="nav-text">阳光高考</div>
+                </div>
+                <div class="nav-item" onclick="window.open('https://yongmukeji.top', '_blank')">
+                    <img src="ymkj-square.png" alt="永慕科技官网" class="nav-icon">
+                    <div class="nav-text">永慕科技官网</div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer>
+        主办单位：永慕科技 <span style="margin: 0 20px;"></span> 版权归各平台所有
+    </footer>
+
+    <script>
+        // 倒计时功能
+        function updateCountdown() {
+            const targetDate = new Date('2027-06-07T00:00:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('time').textContent = '高考已结束！';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('time').textContent = 
+                `${days}天${hours}时${minutes}分${seconds}秒`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
