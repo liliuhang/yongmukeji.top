@@ -165,8 +165,10 @@
     </div>
 
     <footer>
-        主办单位：永慕科技 <span style="margin: 0 10px;"></span> 技术支持：永慕科技电化教育中心
-        <p>网站内容仅面向【云南省】地区，排名不分先后，版权归各平台所有</p>
+        主办单位：永慕科技 <span style="margin: 0 5px;">永慕科技教育考试研究中心<span style="margin: 0 5px;"></span> 技术支持：永慕科技电化教育中心
+        <p>本网站内容仅面向【云南省】地区，各平台排名不分先后，版权归各平台所有</p>
+        <p>【本平台依据《永慕科技半对外教育服务三年（2024 - 2027）高质量发展计划》相关内容进行建设】</p>
+        <p>本平台仅提供信息整合、展示服务，不具备提供使用相应平台所需账号、付费服务使用权限等之义务，敬请悉知！</p>
         <p id="runtime">网页已运行时间：计算中...</p>
     </footer>
 
@@ -185,12 +187,12 @@
             if (distance > 0) {
                 countdownElement.textContent = `${days}天${hours}时${minutes}分${seconds}秒`;
             } else {
-                countdownElement.textContent = '2027年高考已结束！';
+                countdownElement.textContent = '2027年高考已开始/结束！';
             }
         }
 
         function updateRuntime() {
-            const startTime = new Date('2025-03-24T00:00:00').getTime();
+            const startTime = new Date('2025-03-29T00:00:00').getTime();
             const now = new Date().getTime();
             const elapsed = now - startTime;
 
@@ -199,7 +201,7 @@
             const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
 
-            document.getElementById('runtime').textContent = `网页已运行时间（2025年3月24日00：00起）：${days}天${hours}时${minutes}分${seconds}秒`;
+            document.getElementById('runtime').textContent = `网页已运行时间（2025年3月29日00：00起）：${days}天${hours}时${minutes}分${seconds}秒`;
         }
 
         setInterval(() => {
