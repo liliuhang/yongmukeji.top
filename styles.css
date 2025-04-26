@@ -1,251 +1,249 @@
 /* 通用样式 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+body { 
+ font-family: Arial, sans-serif; 
+ margin: 0; 
+ padding: 0; 
+ line-height: 1.6; 
+ overflow: hidden; /* 初始禁止页面滚动 */
 }
 
-a {
-    color: white;
-    text-decoration: none;
+a { 
+ color: white; 
+ text-decoration: none; 
 }
 
-a:hover {
-    color: blue;
+a:hover { 
+ color: blue; 
 }
 
 /* 头部样式 */
-.header {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
+.header { 
+ background-color: black; 
+ color: white; 
+ padding: 15px; /* 减少内边距 */
+ display: flex; 
+ align-items: center; 
 }
 
-.header .logo-container {
-    display: flex;
-    align-items: center;
+.header .logo-container { 
+ display: flex; 
+ align-items: center; 
 }
 
-.header .logo {
-    width: 115px;
-    height: 70px;
-    margin-right: 20px;
+.header .logo { 
+ width: 90px; /* 缩小Logo尺寸 */
+ height: 55px; /* 缩小Logo尺寸 */
+ margin-right: 15px; 
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 24px;
+.header h1 { 
+ margin: 0; 
+ font-size: 18px; /* 缩小字体大小 */
 }
 
 /* 介绍部分样式 */
-.intro {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    padding: 150px;
-    color: white;
-    text-align: center;
-    filter: brightness(100%); /* 轻微降低亮度以增加可读性 */
+.intro { 
+ position: relative; 
+ background-size: cover; 
+ background-position: center; 
+ padding: 100px 15px; /* 减少内边距 */
+ color: white; 
+ text-align: center; 
+ filter: brightness(100%); 
 }
 
-.intro h2 {
-    margin-top: 0;
+.intro h2 { 
+ margin-top: 0; 
+ font-size: 20px; /* 缩小字体大小 */
 }
 
 /* 联系我们部分样式 */
-.contact {
-    background-color: #333; /* 深灰色 */
-    display: flex;
-    padding: 65px;
-    color: white;
+.contact { 
+ background-color: #333; 
+ display: flex; 
+ flex-direction: column; /* 在小屏幕上改为垂直布局 */
+ padding: 20px; 
+ color: white; 
 }
 
-.contact-content {
-    flex: 5; /* 占据剩余空间 */
-    margin-left: 30px;
+.contact-content { 
+ margin-top: 20px; 
 }
 
-.contact img {
-    width: 500px; /* 假设图片宽度为500px，根据实际需求调整 */
-    height: auto;
-    display: block;
-    max-width: 100%; /* 确保图片不会超出容器宽度 */
+.contact img { 
+ width: 50%; /* 图片宽度自适应 */
+ height: auto; 
+ display: block; 
 }
 
-.contact .text-area {
-    display: inline-block; /* 或者使用flex，根据你的具体需求 */
-    vertical-align: inline-block; /* 如果使用inline-block，这个属性可以帮助你垂直对齐 */
-    margin-left: 20px; /* 假设你想要在图片和文字之间有一点间隔 */
+.contact .text-area { 
+ margin-top: 15px; 
 }
 
-.button {
-    display: inline-block;
-    background-color: red;
-    color: white;
-    padding: 20px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+/* 按钮样式 */
+.button { 
+ display: inline-block; 
+ background-color: red; 
+ color: white; 
+ padding: 15px 15px; 
+ border-radius: 5px; 
+ text-decoration: none; 
+ transition: background-color 0.3s; 
+ font-size: 14px; /* 缩小字体大小 */
 }
 
-.button:hover {
-    background-color: darkred;
+.button:hover { 
+ background-color: darkred; 
 }
 
 /* 尾页样式 */
-.footer {
-    background-color: black;
-    color: white;
-    padding: 25px;
-    text-align: left;
+.footer { 
+ background-color: black; 
+ color: white; 
+ padding: 15px; 
+ text-align: left; 
+ display: flex;
+ flex-wrap: wrap;
 }
 
-.footer .logo {  
-    width: 115px;  
-    height: 70px;  
-    margin-right: 30px;  
-}  
-  .footer .links {
-    display: flex;
-    flex-wrap: wrap;
+.footer .logo { 
+ width: 90px; 
+ height: 55px; 
+ margin-right: 15px; 
 }
 
-.footer .links > div {
-    flex: 1 1 calc(33.333% - 20px);
-    margin-bottom: 15px;
-    padding: 0 10px;
-    box-sizing: border-box;
+.footer .links { 
+ flex: 1;
 }
 
-.footer .links h2 {
-    margin-top: 0;
+.footer .links > div { 
+ flex: 1 1 calc(50% - 20px); 
+ margin-bottom: 15px; 
+ padding: 0 10px; 
+ box-sizing: border-box; 
 }
 
-.footer .divider {
-    border-top: 1px solid #555;
-    margin: 10px 0;
+.footer .links h2 { 
+ margin-top: 0; 
+ font-size: 16px; 
 }
 
-.footer .copyright {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+.footer .divider { 
+ border-top: 1px solid #555; 
+ margin: 10px 0; 
+ width: 100%; /* 确保分割线占满整个宽度 */
 }
 
-.footer .copyright p {
-    margin: 0;
+.footer .bottom-links {
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ margin-top: 5px; /* 增加与分割线的间距 */
 }
 
-.footer .copyright span {
-    margin: 0 10px;
-}
-
-/* 基础样式 */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.header, .intro, .contact, .footer {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* 响应式样式 */
-@media (max-width: 768px) {
-    .logo-container h1 {
-        font-size: 1.5em; /* 更小的标题字体 */
-    }
-
-    .intro {
-        background-size: cover; /* 确保背景图片覆盖整个区域但不失真 */
-        background-position: center;
-    }
-
-    .intro-content h2 {
-        font-size: 1.2em; /* 更小的副标题字体 */
-    }
-
-    .text-area p {
-        font-size: 0.9em; /* 更小的文本字体 */
-    }
-
-    .button {
-        font-size: 0.9em; /* 按钮上的字体也相应减小 */
-        width: 100%; /* 使按钮宽度占满整行 */
-    }
-
-    .footer .links > div {
-        flex: 1 1 100%; /* 在小屏幕上每个部分占满一行 */
-    }
+.footer .bottom-links span,
+.footer .bottom-links a {
+ margin: 0 10px;
+ font-size: 12px;
+ text-align: center;
 }
 
 /* 通知栏样式 */
-.notification-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 40px; /* 增加高度以适应更多文字 */
-    background-color: #f00;
-    color: #fff;
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    overflow: hidden; /* 防止文字溢出 */
+.notification-bar { 
+ position: fixed; 
+ top: 0; 
+ left: 0; 
+ width: 100%; 
+ z-index: 1000; 
+ height: 30px; /* 调整高度 */
+ background-color: #f00; 
+ color: #fff; 
+ padding: 0 10px; 
+ display: flex; 
+ align-items: center; 
+ box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+ overflow: hidden; 
 }
 
-.icon-container {
-    margin-right: 10px;
-    font-size: 24px;
+.icon-container { 
+ margin-right: 10px; 
+ font-size: 18px; /* 缩小图标大小 */
 }
 
-.scrolling-text {
-    flex-grow: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    animation: scrollText 15s linear infinite; /* 调整滚动速度 */
+.scrolling-text { 
+ flex-grow: 1; 
+ overflow: hidden; 
+ white-space: nowrap; 
+ box-sizing: border-box; 
+ animation: scrollText 15s linear infinite; 
+ font-size: 15px; /* 缩小字体大小 */
 }
 
-@keyframes scrollText {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+@keyframes scrollText { 
+ from { 
+ transform: translateX(100%); 
+ } 
+ to { 
+ transform: translateX(-100%); 
+ }
 }
 
 /* 弹窗样式 */
-.modal {
-    display: none; /* 默认隐藏 */
-    position: fixed;
-    z-index: 1001; /* 确保在通知栏之上 */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+.modal { 
+ display: none; 
+ position: fixed; 
+ z-index: 1001; 
+ left: 0; 
+ top: 0; 
+ width: 100%; 
+ height: 100%; 
+ overflow: auto; 
+ background-color: rgba(0,0,0,0.5); 
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
+.modal-content { 
+ background-color: #fefefe; 
+ margin: 15% auto; 
+ padding: 15px; 
+ border: 1px solid #888; 
+ width: 90%; /* 增加宽度占比 */
+ max-width: 300px; /* 调整最大宽度 */
+ text-align: center; 
 }
 
-.close {
-    display: none; /* 隐藏关闭按钮 */
+.close { 
+ display: none; 
+}
+
+/* 遮罩层样式 */
+#overlay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+ z-index: 1000;
+ display: none; 
+}
+
+/* 响应式设计 */
+@media (max-width: 381px) {
+ .header, .intro, .contact, .footer {
+  padding: 10px; /* 进一步减少内边距 */
+ }
+
+ .header h1 {
+  font-size: 16px; /* 进一步缩小字体大小 */
+ }
+
+ .intro h2 {
+  font-size: 18px; /* 进一步缩小字体大小 */
+ }
+
+ .footer .links > div {
+  flex: 1 1 100%; /* 在非常小的屏幕上使用全宽 */
+ }
 }
