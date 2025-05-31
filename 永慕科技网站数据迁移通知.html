@@ -1,44 +1,113 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>【永慕科技】网站数据迁移中...</title>  
-<style>  
-  body, html {  
-    height: 70%;  
-    margin: 5;  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
-    justify-content: center;  
-    background-color: #f0f0f0; /* 淡灰色背景，可根据需要调整 */  
-  }  
-  
-  img {  
-    max-width: 100%; /* 响应式图片 */  
-    height: auto;  
-    display: block; /* 移除图片下方可能的间隙 */  
-    margin-bottom: 10px; /* 图片和文本之间的间距 */  
-  }  
-  
-  .maintenance-message {  
-    font-size: 30px; /* 文本大小，可根据需要调整 */  
-    color: #333; /* 文本颜色，可根据需要调整 */  
-    text-align: center; /* 文本居中 */  
-  }  
-</style>  
-</head>  
-<body>  
-  
-<img src="升级维护通知.png" alt="系统维护中图片"> 
-<li>网站数据迁移中，请耐心等待！</li> 
-<p>【网站数据迁移通知】</p>
-<p>尊敬的用户：您好！</p>
-            <p>因运营策略调整，永慕科技官网已于2024年8月6日从"上线了"完全过渡到新域名:<a href="https://yongmukeji.top" target="_blank">https://yongmukeji.top</a>；永慕科技网站群内由“上线了”托管的网站也将逐步脱离“上线了”，实现完全由永慕科技建设、管理。</p>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【永慕科技】网站数据迁移中...</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            font-family: 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .maintenance-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .notice-content {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .notice-content p {
+            margin-bottom: 15px;
+        }
+        
+        .notice-content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .notice-content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .footer {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .maintenance-message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="升级维护通知.png" alt="系统维护中图片" loading="lazy">
+        <div class="maintenance-message">网站数据迁移中，请耐心等待！</div>
+        
+        <div class="notice-content">
+            <p><strong>【网站数据迁移通知】</strong></p>
+            <p>尊敬的用户：您好！</p>
+            <p>因运营策略调整，永慕科技官网已于2024年8月6日从"上线了"完全过渡到新域名:
+                <a href="https://yongmukeji.top" target="_blank" rel="noopener noreferrer">https://yongmukeji.top</a>；
+                永慕科技网站群内由"上线了"托管的网站也将逐步脱离"上线了"，实现完全由永慕科技建设、管理。
+            <p>自2025年2月16日起，永慕科技正式更名为永慕智创软件工作室，并保留永慕科技作为简称。</a>
+            </p>
             <p>因技术有限、工作量大以及先前已发布账号临时停用的通知，全部完成本迁移任务所需的时间较长，预计在2035年12月31日前完成，还请您耐心等待！😊</p>
-            <p>永慕科技</p>
+            <p>永慕智创软件工作室（永慕科技）</p>
             <p>2024年8月6日</p>
-        </div>  
-</body>  
+        </div>
+        
+        <div class="footer">
+            如有任何疑问，请联系我们的客服团队。
+        </div>
+    </div>
+</body>
 </html>
