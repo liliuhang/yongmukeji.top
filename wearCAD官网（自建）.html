@@ -1,144 +1,113 @@
-<!DOCTYPE html>  
-<html lang="zh-CN">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>【建设中】永慕科技|wearCAD官网（自建）</title>  
-    <link rel="stylesheet" href="wearCAD-styles.css">  
-</head>  
-<body>  
-    <header>  
-        <h1>本网站建设中，敬请期待！</h1>  
-    </header>  
-  <style>  
-        /* 在这里添加你的CSS样式 */  
-        .notification-bar {  
-    position: fixed;  
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    z-index: 1000; /* 确保在其他内容之上 */
-    height: 30px; /* 假设通知栏高度为30px */  
-    background-color: #f00; /* 红色背景 */  
-    color: #fff; /* 白色文字 */  
-    padding: 0 10px;  
-    display: flex;  
-    align-items: center;  
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
-}  
-  
-.icon-container {  
-    margin-right: 3px;  
-    font-size: 24px; /* 喇叭图标大小 */  
-}  
-  
-.scrolling-text {  
-    flex-grow: 1;  
-    overflow: hidden;  
-    white-space: nowrap;  
-    box-sizing: border-box;  
-    animation: scrollText 12s linear infinite; /* 滚动动画 */  
-   }  
-  
-@keyframes scrollText {  
-    from {  
-        transform: translateX(100%);  
-    }  
-    to {  
-        transform: translateX(-100%);  
-    }  
-}  
-  
-/* 可选：设置自动隐藏的通知文本 */  
-.hidden {  
-    display: none;  
-}
-    </style>  
-</head>  
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【永慕科技】网站数据迁移中...</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            font-family: 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .maintenance-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .notice-content {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .notice-content p {
+            margin-bottom: 15px;
+        }
+        
+        .notice-content a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .notice-content a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .footer {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .maintenance-message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
 <body>
-<div class="notification-bar">  
-    <div class="icon-container">  
-        <span class="icon">🔈</span> <!-- 使用HTML实体编号表示喇叭图标 -->  
-    </div>  
-<div class="scrolling-text" id="message-container">  
-        <!-- 这里可以通过JavaScript动态添加文本 -->  
-    </div>  
-<script>  
-document.addEventListener('DOMContentLoaded', function() {  
-    let messages = [  
-        { text: "您好，欢迎访问永慕科技|wearCAD官网（自建）！", endTime: new Date('9999-12-31T23:59:59').getTime() }, 
-        { text: "不畏艰难，勇于创新！", endTime: new Date('9999-12-31T23:59:59').getTime() },
-        { text: "永慕科技网站群新篇待绽，十载江湖再会！", endTime: new Date('2035-12-31T23:59:59').getTime() },
-        { text: "💡本网站建设中，详情请见网站提示栏！", endTime: new Date('2035-12-31T23:59:59').getTime() },
-        { text: "永慕科技网站群即将迎来2.0时代，敬请期待！", endTime: new Date('2035-12-31T23:59:59').getTime() },  
-        { text: "通知栏调试中，如给您带来不好的体验，敬请谅解！", endTime: new Date('9999-12-31T23:59:59').getTime() },  
-         ];
-    let currentIndex = 0; // 跟踪当前消息索引  
-  
-function updateMessage() {  
-    let foundActive = false; // 标记是否找到并显示了一个未过期的消息  
-  
-    // 不断尝试找到未过期的消息  
-    while (!foundActive && currentIndex < messages.length) {  
-        let activeMessage = messages[currentIndex];  
-        let now = new Date().getTime(); // 当前时间  
-  
-        // 检查消息是否未过期  
-        if (activeMessage.endTime > now) {  
-            document.getElementById('message-container').textContent = activeMessage.text;  
-            foundActive = true; // 找到并显示了一个未过期的消息  
-        }  
-  
-        // 如果没有找到未过期的消息，尝试下一个消息  
-        currentIndex = (currentIndex + 1) % messages.length;  
-  
-        // 如果已经回到第一个消息但还没有找到未过期的，重置currentIndex以避免无限循环  
-        if (currentIndex === 0 && !foundActive) {  
-            currentIndex = 0; // 实际上这里不需要再次设置0，因为循环会从头开始
-                       // 你可能想在这里添加一个额外的逻辑来处理没有未过期消息的情况，比如显示一个默认的占位符消息  
-            document.getElementById('message-container').textContent = "【目前无消息可通知，请添加新内容！】";  
-            break; // 跳出循环  
-        }  
-    }  
-  
-    // 注意：这里没有再次增加currentIndex，因为它已经在循环内部处理  
-} 
-  
-    // 每12秒更新一次消息  
-    setInterval(updateMessage, 12000);  
-  
-    // 初始化时立即显示第一个有效消息  
-    updateMessage();  
-});  
-</script>  
-</div>
-
-    <section class="carousel">  
-        <div class="carousel-inner">  
-            <a href="https://yongmukeji.top" class="carousel-item" data-expiry="9999-12-31">  
-                <img src="Yongmu Technology Icon - Carousel Chart.jpg" alt="图片1">  
-            </a>  
-            <a href="#" class="carousel-item" data-expiry="9999-12-31">  
-                <img src="Yongmu technology slogan.jpg" alt="图片2">  
-            </a>
-            <a href="https://mp.weixin.qq.com/s/W9Po9X2B-mSRYRiMBK6duA" class="carousel-item" data-expiry="2035-12-31">  
-                <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/449cb2e0-7d4d-4755-81e4-155d7a414f78" alt="图片4">  
-            </a>
-                        <!-- 可以添加更多图片 -->  
-        </div>  
-        <button class="carousel-btn prev">‹</button>  
-        <button class="carousel-btn next">›</button>  
-    </section>  
-  
-    <section class="notification">  
-        <h2>提示</h2>  
-        <p>永慕科技|wearCAD官网（自建）网站预计于【2035年12月31日】完成建设；</a></p>  
-        <p>在此之前您可<a href="https://wearcad.mysxl.cn" target="_blank">点击此处</a>跳转至由“上线了”托管的现有网站，体验更加全面的内容！</p>
-        <p><a href="https://yongmukeji.top/%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E9%80%9A%E7%9F%A5.html" target="_blank">【点击此处查看永慕科技网站群迁移具体通知】</a></p>  
-  
-    </section>  
-  
-    <script src="wearCAD-script.js"></script>  
-
-</body>  
+    <div class="container">
+        <img src="升级维护通知.png" alt="系统维护中图片" loading="lazy">
+        <div class="maintenance-message">网站数据迁移中，请耐心等待！</div>
+        
+        <div class="notice-content">
+            <p><strong>【网站数据迁移通知】</strong></p>
+            <p>尊敬的用户：您好！</p>
+            <p>因运营策略调整，永慕科技官网已于2024年8月6日从"上线了"完全过渡到新域名:
+                <a href="https://yongmukeji.top" target="_blank" rel="noopener noreferrer">https://yongmukeji.top</a>；
+                永慕科技网站群内由"上线了"托管的网站也将逐步脱离"上线了"，实现完全由永慕科技建设、管理。
+            <p>自2025年2月16日起，永慕科技正式更名为永慕智创软件工作室，并保留永慕科技作为简称。</a>
+            </p>
+            <p>因技术有限、工作量大以及先前已发布账号临时停用的通知，全部完成本迁移任务所需的时间较长，预计在2035年12月31日前完成，还请您耐心等待！😊</p>
+            <p>永慕智创软件工作室（永慕科技）</p>
+            <p>2024年8月6日</p>
+        </div>
+        
+        <div class="footer">
+            如有任何疑问，请联系我们的客服团队。
+        </div>
+    </div>
+</body>
 </html>
