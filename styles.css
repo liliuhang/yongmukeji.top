@@ -71,7 +71,7 @@ a:hover {
 }
 
 .contact img { 
- width: 50%; /* 图片宽度自适应 */
+ width: 25%; /* 图片宽度自适应 */
  height: auto; 
  display: block; 
 }
