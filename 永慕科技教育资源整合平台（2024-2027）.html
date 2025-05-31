@@ -12,162 +12,206 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: url('jfm.jpg') no-repeat center center/cover;
+            font-family: 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: url('jfm.jpg') no-repeat center center/cover fixed;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
             padding: 20px;
+            line-height: 1.6;
         }
 
         .overlay {
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
             background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 15px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
         }
 
         .overlay h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            margin-bottom: 15px;
+            line-height: 1.4;
         }
 
         .overlay .countdown {
-            font-size: 20px;
-            color: red;
+            font-size: clamp(1rem, 1.8vw, 1.5rem);
+            color: #ff4757;
+            font-weight: bold;
         }
 
         .platform-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 20px;
             justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 30px;
         }
 
         .platform-box {
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
+            aspect-ratio: 1/1;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
         }
 
         .platform-box:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .platform-box img {
-            width: 80px;
-            height: 80px;
+            width: 70%;
+            max-width: 80px;
+            max-height: 80px;
             margin-bottom: 10px;
+            object-fit: contain;
         }
 
         .platform-box span {
-            font-size: 16px;
-            color: black;
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            word-break: break-word;
+            padding: 0 5px;
         }
 
         footer {
-            margin-top: auto;
             width: 100%;
-            background: black;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.7);
             color: white;
             text-align: center;
             padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            backdrop-filter: blur(5px);
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 10px 0;
+            font-size: clamp(0.8rem, 1vw, 1rem);
+        }
+
+        @media (max-width: 768px) {
+            .overlay {
+                padding: 20px;
+            }
+            
+            .platform-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 15px;
+            }
+            
+            .platform-box span {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .platform-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+            
+            .platform-box span {
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="overlay">
         <h1>欢迎访问【永慕科技教育资源整合平台（2024-2027）】</h1>
-        <p>永慕科技提示您：距离2027年高考还有：<span class="countdown" id="countdown"></span></p>
+        <p>永慕智创软件工作室（永慕科技）提示您：距离2027年高考还有：<span class="countdown" id="countdown"></span></p>
     </div>
 
     <div class="platform-container">
-        <div class="platform-box" onclick="window.location.href='https://www.zhixue.com'">
-            <img src="zhixue.png" alt="智学网">
+        <a class="platform-box" href="https://www.zhixue.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/badb1733-5fb4-4d96-ba3f-972ec9af6ebb" alt="智学网" loading="lazy">
             <span>智学网</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.smartedu.cn'">
-            <img src="gjzhjypt.jpg" alt="智慧教育平台">
+        </a>
+        <a class="platform-box" href="https://www.smartedu.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/dd99731f-c55d-40ef-9620-0767a0e1f394" alt="智慧教育平台" loading="lazy">
             <span>智慧教育平台</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.zxxk.com'">
-            <img src="xkw.jpg" alt="学科网">
+        </a>
+        <a class="platform-box" href="https://www.zxxk.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/339c692f-6b01-4ece-abd4-58f7136d7c40" alt="学科网" loading="lazy">
             <span>学科网</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.jyeoo.com'">
-            <img src="jyw.png" alt="菁优网">
+        </a>
+        <a class="platform-box" href="https://www.jyeoo.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/22582bb3-579e-446d-b660-23a3d443a9e6" alt="菁优网" loading="lazy">
             <span>菁优网</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://m.tesoon.com'">
-            <img src="txjy.png" alt="天星教育">
+        </a>
+        <a class="platform-box" href="https://m.tesoon.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/e8132be6-3d20-42d6-b917-0a511affc411" alt="天星教育" loading="lazy">
             <span>天星教育</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.lxzwedu.com'">
-            <img src="lxs.jpg" alt="理想树">
+        </a>
+        <a class="platform-box" href="https://www.lxzwedu.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/6c50076c-8249-4185-a373-9b57f2b567cf" alt="理想树" loading="lazy">
             <span>理想树</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://student.up366.cn'">
-            <img src="txwxs.png" alt="天学网（学生端）-网页版">
+        </a>
+        <a class="platform-box" href="https://student.up366.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/0143ebad-ecf3-4052-ba10-33fb14eaeed7" alt="天学网（学生端）-网页版" loading="lazy">
             <span>天学网（学生端）-网页版</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://jyt.yn.gov.cn'">
-            <img src="ynsjyt.png" alt="云南省教育厅">
+        </a>
+        <a class="platform-box" href="https://jyt.yn.gov.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/c1e482ef-4c0a-4377-8d98-95148b75af0e" alt="云南省教育厅" loading="lazy">
             <span>云南省教育厅</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://gaokao.chsi.com.cn'">
-            <img src="yggk.jpg" alt="阳光高考">
+        </a>
+        <a class="platform-box" href="https://gaokao.chsi.com.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/db56a3bd-304c-4c1f-b77e-edf8e33e71ca" alt="阳光高考" loading="lazy">
             <span>阳光高考</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.gaokao.cn'">
-            <img src="zsgk.jpg" alt="掌上高考">
+        </a>
+        <a class="platform-box" href="https://www.gaokao.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/17257296-fc7e-4d8f-bcd1-967c9bf6b9d2" alt="掌上高考" loading="lazy">
             <span>掌上高考</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.ynzs.cn'">
-            <img src="ynszsksy.png" alt="云南省招生考试院">
+        </a>
+        <a class="platform-box" href="https://www.ynzs.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/8b084d63-6739-4963-a187-8c8819f72b02" alt="云南省招生考试院" loading="lazy">
             <span>云南省招生考试院</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://www.ynxueye.com'">
-            <img src="ynszsksy.png" alt="云南学业网">
+        </a>
+        <a class="platform-box" href="https://www.ynxueye.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/8b084d63-6739-4963-a187-8c8819f72b02" alt="云南学业网" loading="lazy">
             <span>云南学业网</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://gk.ynzs.cn'">
-            <img src="ynszsksy.png" alt="云南省普通高等学校招生考生服务平台">
+        </a>
+        <a class="platform-box" href="https://gk.ynzs.cn" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/8b084d63-6739-4963-a187-8c8819f72b02" alt="云南省普通高等学校招生考生服务平台" loading="lazy">
             <span>云南省普通高等学校招生考生服务平台</span>
-        </div>
-        <div class="platform-box" onclick="window.location.href='https://yongmukeji.top'">
-            <img src="ymkj-square.png" alt=永慕科技官网（自建）">
-            <span>永慕科技官网（自建）</span>
-        </div>
+        </a>
+        <a class="platform-box" href="https://yongmukeji.top" target="_blank" rel="noopener noreferrer">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/908f47f5-8df2-49c4-947c-f65ec37f1ab3" alt="永慕智创软件工作室（永慕科技）官网" loading="lazy">
+            <span>永慕智创软件工作室（永慕科技）官网</span>
+        </a>
         </div>
         <div class="platform-box" onclick="window.location.href='#'">
-            <img src="Yongmu Technology Education Resource Integration Platform (2024-2027).png" alt="更多平台收集中...">
+            <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/c5c5ecd2-3ee5-4bfe-9c34-de73a7373441" alt="更多平台收集中...">
             <span>更多平台收集中...</span>
-        </div>
-        <!-- 可以添加更多平台 -->
+        </a>
     </div>
 
     <footer>
-        主办单位：永慕科技 <span style="margin: 0 5px;">永慕科技教育考试研究中心<span style="margin: 0 5px;"></span> 技术支持：永慕科技电化教育中心
+        <p>主办单位：永慕智创软件工作室（永慕科技） &nbsp; 永慕科技教育考试研究中心</p>
+        <p>技术支持：永慕科技电化教育中心</p>
         <p>本网站内容仅面向【云南省】地区，各平台排名不分先后，版权归各平台所有</p>
-        <p>【本平台依据《永慕科技半对外教育服务三年（2024 - 2027）高质量发展计划》相关内容进行建设】</p>
+        <p>【本平台依据《永慕智创软件工作室（永慕科技）半对外教育服务三年（2024 - 2027）高质量发展计划》相关内容进行建设】</p>
         <p>本平台仅提供信息整合、展示服务，不具备提供使用相应平台所需账号、付费服务使用权限等之义务，敬请悉知！</p>
         <p id="runtime">网页已运行时间：计算中...</p>
     </footer>
