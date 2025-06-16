@@ -203,23 +203,23 @@
   throw new Error("定位服务未确认开启"); 
  } 
  
- // 获取IP地址（使用第三方API） 
- function getIPAddress(callback) { 
-  fetch('https://api.ipify.org?format=json') 
-   .then(response => response.json()) 
-   .then(data => callback(data.ip)) 
-   .catch(error => { 
-    console.error('获取IP地址失败:', error); 
-    // 备用IP获取API 
-    fetch('https://ipapi.co/json/') 
-     .then(response => response.json()) 
-     .then(data => callback(data.ip)) 
-     .catch(error => { 
-      console.error('备用IP获取失败:', error); 
-      callback('无法获取IP地址'); 
-     }); 
-   }); 
- } 
+ // 获取IP地址（使用ip-api.com）
+ function getIPAddress(callback) {
+  fetch('http://ip-api.com/json/')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        callback(data.query); // 返回IP地址
+      } else {
+        console.error('获取IP地址失败:', data.message);
+        callback('无法获取IP地址');
+      }
+    })
+    .catch(error => {
+      console.error('获取IP地址失败:', error);
+      callback('无法获取IP地址');
+    });
+ }
  
  // 使用高德地图API获取位置信息和详细地址
  function getAMapLocationAndAddress(callback) { 
