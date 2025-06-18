@@ -5,6 +5,36 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>永慕智创软件工作室（永慕科技）官网</title>
  <link rel="stylesheet" href="styles.css">
+ <style>
+  /* 添加通知栏样式调整 */
+  @media (max-width: 387px) and (max-height: 901px) {
+    .scrolling-text {
+      white-space: normal; /* 修改为normal，允许文本换行 */
+      word-wrap: break-word; /* 允许长单词或URL换行 */
+      max-width: 100%;
+      line-height: 1.2;
+      padding: 5px 0; /* 增加一些内边距，使文本看起来更舒适 */
+      box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
+    }
+  }
+  /* 非特定尺寸下的通知栏样式，保持原有滚动效果 */
+  .scrolling-text {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap; /* 在非特定尺寸下保持不换行，以便滚动 */
+    box-sizing: border-box;
+    animation: scrollText 15s linear infinite;
+    font-size: 15px;
+  }
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+ </style>
 </head>
 <body>
  <div class="notification-bar">
@@ -21,11 +51,9 @@
  您好！为保证您的合法权益，在访问、使用本网站时您需同意
  <a href="https://yongmukeji.top/%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE.pdf" target="_blank" style="color: #007BFF; text-decoration: none;">《永慕科技服务条款》</a>
  以及
- <a href="https://yongmukeji.top/%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96.pdf" target="_blank" style="color: #007BFF; text-decoration: none;">《永慕科技隐私政策》</a>，
- 是否同意？
+ <a href="https://yongmukeji.top/%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96.pdf" target="_blank" style="color: #007BFF; text-decoration: none;">《永慕科技隐私政策》</a>，<br>【点击”同意“即代表您同意并接受上述条款；如不同意，请自行退出、关闭本网站！】
  </p>
  <button class="button agree" style="background-color: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">同意</button>
- <a href="#" class="button disagree" style="background-color: #dc3545; color: white; text-decoration: none; padding: 10px 10px; display: inline-block; border-radius: 4px;">不同意</a>
  </div>
  </div>
  
@@ -34,11 +62,11 @@
  <div style="height: 1.5em; width: 100%;"></div> <!-- 这是一个空白的div，用于创建两行的高度 -->
  <header class="header">
  <div class="logo-container">
- <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/439fdc6d-f9b7-40ed-9ad3-23ea38c984b7" alt="永慕科技" class="logo">
+ <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/cf266ff7-7a8f-4444-9ef3-3d51da94c440" alt="永慕科技" class="logo">
  <h1>永慕智创软件工作室（永慕科技） | YongmuTechnology</h1>
  </div>
  </header>
- <section class="intro" style="background-image: url('https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/439fdc6d-f9b7-40ed-9ad3-23ea38c984b7');">
+ <section class="intro" style="background-image: url('https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/ff78bf02-5c15-4874-ade7-6e60a7ca7b33');">
  <div class="intro-content">
  <h2>永慕科技|wearCAD</h2>
  <p>永慕科技成立于2022年10月25日，原独立的wearCAD团队已成为永慕科技核心团队~</p>
@@ -55,13 +83,14 @@
  <div class="text-area">
  <p>联系我们</p>
  <p>如您遇到应用问题或有疑问，请点击<a href="https://www.wjx.cn/vm/rMkXPNn.aspx" target="_blank">【此处】</a>填写问卷，我们将尽快回复您！</p>
- <a href="https://yongmukeji.top/%E6%95%B4%E6%94%B9%E3%80%81%E5%8D%87%E7%BA%A7%E9%80%9A%E7%9F%A5.html" class="button">访问 智能客服</a>
+ <p>您也可以通过点击下方的”访问智能客服“进行自助服务！</p>
+ <a href="https://chatbot.weixin.qq.com/webapp/xa8pVadXexnpYypLGlFKv3RQONcsq5?robotName=%E6%B0%B8%E6%85%95%E6%99%BA%E5%88%9B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4%EF%BC%88%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%EF%BC%89%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D" class="button">访问 智能客服</a>
  </div>
  </div>
  </section>
  <footer class="footer">
  <div class="logo-container">
- <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/05f8ba48-c4d4-4a9d-8703-0d383502c4a7" alt="永慕科技" class="logo">
+ <img src="https://hive.forms.usercontent.microsoft/Images/9188040d-6c67-4c5b-b112-36a304b66dad/00000000-0000-0000-0003-bffd409131bf/T0RRH45M4BJGVXSCOEE2GS5JAZ/ff78bf02-5c15-4874-ade7-6e60a7ca7b33" alt="永慕科技" class="logo">
  </div>
  <div class="links">
  <div>
@@ -90,9 +119,9 @@
  <div>
  <h2>联系我们</h2>
  <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-   <a href="mailto:YongmuTechnology@outlook.com" target="_blank">YongmuTechnology@outlook.com</a>
+ <a href="mailto:YongmuTechnology@outlook.com" target="_blank">YongmuTechnology@outlook.com</a>
  </p>
- <p><a href="https://yongmukeji.top/%E6%95%B4%E6%94%B9%E3%80%81%E5%8D%87%E7%BA%A7%E9%80%9A%E7%9F%A5.html" target="_blank">智能客服</a></p>
+ <p><a href="https://chatbot.weixin.qq.com/webapp/xa8pVadXexnpYypLGlFKv3RQONcsq5?robotName=%E6%B0%B8%E6%85%95%E6%99%BA%E5%88%9B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E4%BD%9C%E5%AE%A4%EF%BC%88%E6%B0%B8%E6%85%95%E7%A7%91%E6%8A%80%EF%BC%89%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D" target="_blank">智能客服</a></p>
  </div>
  <div class="divider"></div>
  </div>
@@ -105,7 +134,7 @@
  <script>
  document.addEventListener('DOMContentLoaded', function() {
  let messages = [
- { text: "您好，欢迎访问永慕智创软件工作室官网！", endTime: new Date('9999-12-31T23:59:59').getTime() },
+ { text: "欢迎访问永慕智创软件工作室（永慕科技）官网！", endTime: new Date('9999-12-31T23:59:59').getTime() },
  { text: "不畏艰难，勇于创新！", endTime: new Date('9999-12-31T23:59:59').getTime() },
  { text: "为人民服务", endTime: new Date('9999-12-31T23:59:59').getTime() },
  { text: "永慕科技网站群新篇待绽，十载江湖再会！", endTime: new Date('2035-12-31T23:59:59').getTime() },
@@ -125,35 +154,68 @@
  }
  currentIndex = (currentIndex + 1) % messages.length;
  if (currentIndex === 0 && !foundActive) {
- document.getElementById('message-container').textContent = "【目前无可通知消息，请添加新内容！】";
+ document.getElementById('message-container').textContent = "【目前无可通知消息，请添加新内容！^[8]^】";
  break;
  }
  }
  }
  setInterval(updateMessage, 15000);
  updateMessage();
-
  // 弹窗逻辑
  document.querySelector('.agree').onclick = function() {
  document.getElementById("myModal").style.display = "none";
  document.getElementById("overlay").style.display = "none";
  document.body.style.overflow = "auto"; // 允许页面滚动
  };
-
+ // 修改后的不同意弹窗逻辑 - 只有确定选项
  document.querySelector('.disagree').onclick = function() {
- if (confirm('如您不同意以上条款，则不得使用永慕科技的服务，请您手动退出本网站！【点击取消可返回重新选择是否同意条款】')) {
- window.location.href = '#'; // 替换为实际退出页面的URL
- } else {
- showModal();
- }
+    // 创建自定义模态框
+    const customModal = document.createElement('div');
+    customModal.style.position = 'fixed';
+    customModal.style.top = '0';
+    customModal.style.left = '0';
+    customModal.style.width = '100%';
+    customModal.style.height = '100%';
+    customModal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    customModal.style.display = 'flex';
+    customModal.style.justifyContent = 'center';
+    customModal.style.alignItems = 'center';
+    customModal.style.zIndex = '1001'; // 高于遮罩层
+    
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = 'white';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '8px';
+    modalContent.style.maxWidth = '80%';
+    modalContent.style.textAlign = 'center';
+    
+    const message = document.createElement('p');
+    message.textContent = '如您不同意以上条款，则不得使用永慕科技的服务，请您手动退出本网站！^[9]^';
+    
+    const confirmBtn = document.createElement('button');
+    confirmBtn.textContent = '确定';
+    confirmBtn.style.marginTop = '10px';
+    confirmBtn.style.padding = '8px 16px';
+    confirmBtn.style.backgroundColor = '#dc3545';
+    confirmBtn.style.color = 'white';
+    confirmBtn.style.border = 'none';
+    confirmBtn.style.cursor = 'pointer';
+    confirmBtn.style.borderRadius = '4px';
+    confirmBtn.onclick = function() {
+        document.body.removeChild(customModal);
+        window.location.href = '#'; // 替换为实际退出页面的URL
+    };
+    
+    modalContent.appendChild(message);
+    modalContent.appendChild(confirmBtn);
+    customModal.appendChild(modalContent);
+    document.body.appendChild(customModal);
  };
-
  function showModal() {
  document.getElementById("myModal").style.display = "block";
  document.getElementById("overlay").style.display = "block";
  document.body.style.overflow = "hidden"; // 禁止页面滚动
  }
-
  showModal(); // 页面加载时立即显示弹窗
  });
  </script>
